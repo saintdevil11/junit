@@ -1,4 +1,4 @@
-package steps.web;
+package steps.ui;
 
 import PageObject.git.MainPage;
 import hooks.WebHooks;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class AutorizeWeb extends WebHooks {
+public class TemplateTest extends WebHooks {
 
     @Tag("1ui")
     @Test
