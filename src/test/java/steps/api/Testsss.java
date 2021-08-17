@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 
 public class Testsss {
+    //чтобы тесты работали очень важно чтобы клаас имел имя с заглавной буквы
+
 
     @Tag("1api")
     @Test
