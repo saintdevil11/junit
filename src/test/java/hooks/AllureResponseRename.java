@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.Objects;
 /**
 * Класс менеджер с переименованием запроса и ответа, чтобы в аллюр отчете это отображалось как Request и Response
+ *  Пока не работает!!
 */
 public class AllureResponseRename extends AllureRestAssured {
 //    private String reqTemplatePath = "http-request.ft1";
