@@ -1,5 +1,6 @@
 package steps.api;
 
+import hooks.ApiHooks;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -7,10 +8,12 @@ import org.json.JSONObject;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static io.restassured.RestAssured.given;
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
+@ExtendWith({ApiHooks.class})
 public class Testsss {
     //чтобы тесты работали очень важно чтобы класс имел имя с заглавной буквы
 
@@ -28,6 +31,7 @@ public class Testsss {
                 .then()
                 .statusCode(200)
                 .extract().response();
+
         /**
          * вывод следующей строки это для просмотре того что же нам возвращает ответ
          */
@@ -37,6 +41,7 @@ public class Testsss {
 
     @Tag("2api")
     @Test
+    @DisplayName("Характер Морти ещё")
     public void morti1(){
         RequestSpecification request = given();
         request.header("Content-Type", "application/json");
@@ -46,7 +51,10 @@ public class Testsss {
         log.println(statuCode);
         log.println(boddy);
     }
+
+    @Tag("3api")
     @Test
+    @DisplayName("Характер Морти ещё +")
     public void GetCharacter() {
 
         Response response1 = given()
@@ -73,6 +81,7 @@ public class Testsss {
         log.println(character);
     }
 
+    @Tag("4api")
     @Test
     public void GetLocation() {
 

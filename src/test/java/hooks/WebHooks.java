@@ -2,6 +2,8 @@ package hooks;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
@@ -26,6 +28,20 @@ public class WebHooks {
             System.setProperty("selenide.browser", "Chrome");
             Configuration.startMaximized = true;
         }
+    }
+
+    /**
+     * Метод аллюр менеджер: для отображения в аллюре селенидовских шагов при наличии в проекте параллелизации
+     */
+    @BeforeAll
+    public static void allureSubThreadParallel(){
+        String listenerName = "AllureSelenide";
+
+        if(!(SelenideLogger.hasListener(listenerName)))
+            SelenideLogger.addListener(listenerName,
+                    new AllureSelenide().
+                            screenshots(true).
+                            savePageSource(false));
     }
 
     @AfterEach()
