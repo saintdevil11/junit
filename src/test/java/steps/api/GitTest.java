@@ -1,17 +1,18 @@
 package steps.api;
 
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
+import BaseApi.Ferst;
+import hooks.ApiHooks;
 import io.restassured.response.Response;
-import org.json.JSONObject;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+import static BaseApi.Ferst.ferrrst;
 import static io.restassured.RestAssured.given;
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
-public class Git {
+@ExtendWith({ApiHooks.class})
+public class GitTest {
 
     @Tag("9api")
     @Test
@@ -29,6 +30,12 @@ public class Git {
                 .log().all()
                 .extract().response();
         log.println(response1);
+    }
+
+    @Test
+    @Tag("01api")
+    public void git1(){
+        ferrrst();
     }
 
 }
