@@ -20,25 +20,25 @@ public class MainPage {
     private SelenideElement buttonButtonSignGit;
 
 
-    public MainPage clickSignInGit(){
+    public HHBVJHB clickSignInGit(){
         buttonSignInGit.click();
-        return page(MainPage.class);
+        return page(HHBVJHB.class);
     }
 
-    public MainPage clickToValLoginGit(String val1){
+    public HHBVJHB clickToValLoginGit(String val1){
         buttonLoginGit.click();
         buttonLoginGit.sendKeys(val1);
-        return page(MainPage.class);
+        return page(HHBVJHB.class);
     }
 
-    public MainPage clickToValPassGit(String val2){
+    public HHBVJHB clickToValPassGit(String val2){
         buttonPasswordGit.click();
         buttonPasswordGit.sendKeys(val2);
-        return page(MainPage.class);
+        return page(HHBVJHB.class);
     }
 
-    public MainPage clickButtonSignGit(){
+    public HHBVJHB clickButtonSignGit(){
         buttonButtonSignGit.click();
-        return page(MainPage.class);
+        return page(HHBVJHB.class);
     }
 }

@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.given;
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 public class Ferst {
-    @Step
+    @Step("Шаг 1 проверка морти")
     public static void ferrrst(){
         seccccond();
         Response response1 = given()

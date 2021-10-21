@@ -9,9 +9,6 @@ import java.util.Properties;
  *  */
 public class Configuration {
     private static final String CONFIGURATION_FILE = "/test.properties";
-    //Эта строчка для возможности переопределения загружаемых данных вместо test.properties
-
-
     private static final Properties properties;
 
     static {
@@ -25,6 +22,7 @@ public class Configuration {
 
     // Эта строка смотрит на входящие данные из вне. Допустим можно указать данные в Jenkins, если таких данных нет то брать из проперти файла
     public static String getConfigurationValue(String key) {
+
         return ((System.getProperty(key) == null) ? properties.getProperty(key) : System.getProperty(key));
     }
 

@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 public class Second {
-    @Step
+    @Step("Шаг 2 проверка морти снова")
     public static void seccccond(){
         Response response1 = given()
                 .baseUri(utils.Configuration.getConfigurationValue("rickandmorti"))

@@ -3,6 +3,7 @@ package steps.api;
 import BaseApi.Ferst;
 import hooks.ApiHooks;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,6 +17,7 @@ public class GitTest {
 
     @Tag("9api")
     @Test
+    @DisplayName("Тест")
     public void git() {
         Response response1 = given()
                 .baseUri(utils.Configuration.getConfigurationValue("github"))
