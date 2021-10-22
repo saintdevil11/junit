@@ -26,8 +26,8 @@ public class TemplateTest extends WebHooks {
                 .clickToValPassGit("123")
                 .clickButtonSignGit()
                 .clickSignInGit1()
-                .clickToValLoginGit1("")
-                .clickSignInGit2()
-                .clickToValLoginGit2("");
+                .clickToValLoginGit1("");
+//                .clickSignInGit2()
+//                .clickToValLoginGit2("");
     }
 }

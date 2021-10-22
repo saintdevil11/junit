@@ -21,9 +21,9 @@ public class Jjisdrgujhbdrt {
         return page(Jjisdrgujhbdrt.class);
     }
 
-    public Jjisdrgujhbdrt clickToValLoginGit2(String val1){
+    public HHBVJHB clickToValLoginGit2(String val1){
         buttonLoginGit2.click();
         buttonLoginGit2.sendKeys(val1);
-        return page(Jjisdrgujhbdrt.class);
+        return page(HHBVJHB.class);
     }
 }

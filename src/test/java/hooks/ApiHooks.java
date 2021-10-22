@@ -10,8 +10,13 @@ public class ApiHooks implements BeforeAllCallback {
     * Тут мы включаем фильтрацию запросов и ответов api чтобы в отчете отображалось
      */
 
+    private static boolean started = false;
+
     @Override
     public void beforeAll(ExtensionContext context) {
-        RestAssured.filters(new AllureRestAssured());
+        if (!started) {
+            started = true;
+            RestAssured.filters(new AllureRestAssured());
+        }
     }
 }

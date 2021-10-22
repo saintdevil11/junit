@@ -18,9 +18,9 @@ public class HHBVJHB extends MainPage{
         return page(HHBVJHB.class);
     }
 
-    public HHBVJHB clickToValLoginGit1(String val1){
+    public Jjisdrgujhbdrt clickToValLoginGit1(String val1){
         buttonLoginGit1.click();
         buttonLoginGit1.sendKeys(val1);
-        return page(HHBVJHB.class);
+        return page(Jjisdrgujhbdrt.class);
     }
 }
