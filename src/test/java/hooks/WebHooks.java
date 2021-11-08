@@ -27,7 +27,8 @@ public class WebHooks {
         if (webDriverLocation != null) {
             System.setProperty("webdriver.chrome.driver", webDriverLocation);
             System.setProperty("selenide.browser", "Chrome");
-            //Следующие строки для работы с браузером IE
+            Configuration.startMaximized = true;
+  //Следующие строки для работы с браузером IE
 //            System.setProperty("webdriver.ie.driver", webDriverLocation);
 //            System.setProperty("selenide.browser", "Internet Explorer");
 //            Configuration.startMaximized = true;

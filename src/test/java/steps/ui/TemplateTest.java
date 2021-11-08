@@ -17,6 +17,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static BaseApi.Ferst.ferrrst;
 import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.page;
 
 public class TemplateTest extends WebHooks {
 
@@ -27,8 +28,8 @@ public class TemplateTest extends WebHooks {
      //   open(utils.Configuration.getConfigurationValue("main.GitHub"), MainPage.class)
                 .clickSignInGit()
                 .clickToValLoginGit(utils.Configuration.getConfigurationValue("login124534"))
-                .clickToValPassGit("123")
-                .clickButtonSignGit();
+                .clickToValPassGit("123");
+        page(MainPage.class).clickButtonSignGit();
 //                .clickSignInGit1()
 //                .clickToValLoginGit1("");
 //                .clickSignInGit2()

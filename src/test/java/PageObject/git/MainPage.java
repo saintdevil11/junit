@@ -37,8 +37,7 @@ public class MainPage {
         return page(HHBVJHB.class);
     }
 
-    public HHBVJHB clickButtonSignGit(){
+    public void clickButtonSignGit(){
         buttonButtonSignGit.click();
-        return page(HHBVJHB.class);
     }
 }
