@@ -17,8 +17,9 @@ public class WebHooks {
 
     @BeforeAll()
     private static void setDriverFromProps() {
+        Configuration.startMaximized = true;
         //Подключаем драйвер напрямую из test.properties
-        String webDriverLocation = utils.Configuration.getConfigurationValue("webdriverlocationLOCALIE");
+        String webDriverLocation = utils.Configuration.getConfigurationValue("webdriverlocationLOCAL");
         //Следуем по условию запуска на selenoid, есть строка в проперти закомменчена то запуск на локальном драйвере
         if (utils.Configuration.getConfigurationValue("remote.url") != null)
             Configuration.remote = utils.Configuration.getConfigurationValue("remote.url");
@@ -27,7 +28,6 @@ public class WebHooks {
         if (webDriverLocation != null) {
             System.setProperty("webdriver.chrome.driver", webDriverLocation);
             System.setProperty("selenide.browser", "Chrome");
-            Configuration.startMaximized = true;
   //Следующие строки для работы с браузером IE
 //            System.setProperty("webdriver.ie.driver", webDriverLocation);
 //            System.setProperty("selenide.browser", "Internet Explorer");
