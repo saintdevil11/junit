@@ -1,21 +1,11 @@
 package steps.ui;
 
-import PageObject.git.MainPage;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Driver;
-import com.codeborne.selenide.logevents.SelenideLogger;
+import PageObject.other.MainPage;
 import hooks.WebHooks;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 
-import static BaseApi.Ferst.ferrrst;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 

@@ -1,13 +1,10 @@
 package steps.api;
 
 import hooks.ApiHooks;
-import hooks.WebHooks;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.json.JSONArray;
 import org.json.JSONObject;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,11 +13,9 @@ import stash.Stash;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 @ExtendWith({ApiHooks.class})
 public class Testsss {
@@ -45,7 +40,7 @@ public class Testsss {
          * вывод следующей строки это для просмотре того что же нам возвращает ответ
          */
         String resp = response1.getBody().asString();
-        log.println(resp);
+//        log.println(resp);
     }
 
     @Tag("2api")
@@ -57,8 +52,8 @@ public class Testsss {
         Response response = request.get("https://rickandmortyapi.com/api/character/2");
         int statuCode = response.statusCode();
         String boddy = response.getBody().asString();
-        log.println(statuCode);
-        log.println(boddy);
+//        log.println(statuCode);
+//        log.println(boddy);
     }
 
     @Tag("3api")
@@ -75,9 +70,9 @@ public class Testsss {
         String location1 = new JSONObject(response1.body().asString()).getJSONObject("location").get("name").toString();
         int lst = (new JSONObject(response1.body().asString()).getJSONArray("episode").length() - 1);
         int episode = Integer.parseInt(new JSONObject(response1.body().asString()).getJSONArray("episode").get(lst).toString().replaceAll("[^0-9]", ""));
-        log.println(name);
-        log.println(location1);
-        log.println(episode);
+//        log.println(name);
+//        log.println(location1);
+//        log.println(episode);
         Stash.put("q", episode);
 
         Response response2 = given()
@@ -88,7 +83,7 @@ public class Testsss {
                 .extract().response();
         int lst1 = (new JSONObject(response2.body().asString()).getJSONArray("characters").length() - 1);
         int character = Integer.parseInt(new JSONObject(response2.body().asString()).getJSONArray("characters").get(lst1).toString().replaceAll("[^0-9]", ""));
-        log.println(character);
+//        log.println(character);
         System.out.println(character);
     }
 
@@ -102,7 +97,7 @@ public class Testsss {
                 .extract().response();
         int lst1 = (new JSONObject(response2.body().asString()).getJSONArray("characters").length() - 1);
         int character = Integer.parseInt(new JSONObject(response2.body().asString()).getJSONArray("characters").get(lst1).toString().replaceAll("[^0-9]", ""));
-        log.println(character);
+//        log.println(character);
         System.out.println(character);
     }
 
@@ -124,8 +119,8 @@ public class Testsss {
         String resp3 = response3.getBody().asString();
         String name = new JSONObject(response3.body().asString()).get("name").toString();
         String location2 = new JSONObject(response3.body().asString()).getJSONObject("location").get("name").toString();
-        log.println(name);
-        log.println(location2);
+//        log.println(name);
+//        log.println(location2);
     }
 
     @Test

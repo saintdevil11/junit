@@ -6,7 +6,6 @@ import io.restassured.response.Response;
 
 import static BaseApi.Second.seccccond;
 import static io.restassured.RestAssured.given;
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 public class Ferst {
     @Step("Шаг 1 проверка морти")
@@ -26,7 +25,7 @@ public class Ferst {
          * вывод следующей строки это для просмотре того что же нам возвращает ответ
          */
         String resp = response1.getBody().asString();
-        log.println(resp);
+//        log.println(resp);
     }
 
 }

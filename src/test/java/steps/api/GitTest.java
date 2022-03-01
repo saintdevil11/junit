@@ -1,6 +1,5 @@
 package steps.api;
 
-import BaseApi.Ferst;
 import hooks.ApiHooks;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
@@ -10,7 +9,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import static BaseApi.Ferst.ferrrst;
 import static io.restassured.RestAssured.given;
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 @ExtendWith({ApiHooks.class})
 public class GitTest {
@@ -31,7 +29,7 @@ public class GitTest {
                 .statusCode(302)
                 .log().all()
                 .extract().response();
-        log.println(response1);
+//        log.println(response1);
     }
 
     @Test
