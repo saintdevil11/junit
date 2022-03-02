@@ -16,3 +16,7 @@ mvn allure:serve
 #Для запуска на selenoid
 локально: в проперти разкомментировать строку remote.url
 или в строке запуска -Dremote.url=http://*******
+
+#запуски без указанных переменных в переменных средах винды
+set path=%path%;C:\apache-maven-3.6.3\bin
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_241
