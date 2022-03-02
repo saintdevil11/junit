@@ -16,7 +16,7 @@ public class AutorizationSteps {
         open(url);
     }
 
-    @Step("Авторизуемся в системе пользователем '{log}'")
+    @Step("Авторизуемся в системе пользователем {log}")
     public static void autorisation(String log, String pass){
         Allure.getLifecycle().updateStep(stepResult -> stepResult.getParameters().remove(1));
         $x(buttonSignInGit).click();
@@ -25,9 +25,10 @@ public class AutorizationSteps {
         $x(buttonButtonSignGit).click();
     }
 
+    @Step("Вводит пароль")
     public static Parameter setPassword(String pass){
         $x(buttonPasswordGit).sendKeys(pass);
-        Allure.getLifecycle().updateStep(stepResult -> stepResult.setName(pass));
+        Allure.getLifecycle().updateStep(stepResult -> stepResult.setName(buttonPasswordGit));
         return null;
     }
 }
