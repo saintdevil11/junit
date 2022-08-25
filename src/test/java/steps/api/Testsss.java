@@ -85,20 +85,20 @@ public class Testsss {
         int character = Integer.parseInt(new JSONObject(response2.body().asString()).getJSONArray("characters").get(lst1).toString().replaceAll("[^0-9]", ""));
 //        log.println(character);
         System.out.println(character);
-    }
-
-    public void getGet() {
-        Stash.get("q");
-        Response response2 = given()
+//    }
+//
+//    public void getGet() {
+//        Stash.get("q");
+        Response response22 = given()
                 .baseUri("https://rickandmortyapi.com/api")
                 .when()
-                .get("/episode/" + "q")
+                .get("/episode/" + Stash.get("q"))
                 .then()
                 .extract().response();
-        int lst1 = (new JSONObject(response2.body().asString()).getJSONArray("characters").length() - 1);
-        int character = Integer.parseInt(new JSONObject(response2.body().asString()).getJSONArray("characters").get(lst1).toString().replaceAll("[^0-9]", ""));
+        int lst11 = (new JSONObject(response22.body().asString()).getJSONArray("characters").length() - 1);
+        int character1 = Integer.parseInt(new JSONObject(response22.body().asString()).getJSONArray("characters").get(lst11).toString().replaceAll("[^0-9]", ""));
 //        log.println(character);
-        System.out.println(character);
+        System.out.println(character1);
     }
 
     @Tag("4api")
@@ -126,12 +126,15 @@ public class Testsss {
     @Test
     public void jsontest() throws IOException {
         JSONObject body = new JSONObject(new String(Files.readAllBytes(Paths.get("src/test/resources/json/1.json"))));
-        //При доступе к массиву
+        //При доступе к вложенности
         body.getJSONObject("class").put("name", "vanya");
 
-        //При достпуе без массива
+        //При доступе без вложенностей
         body.put("base", "2");
         body.put("id", "13");
+
+        //При доступе к массивам
+        body.getJSONArray("name").getJSONObject(0).put("name","value");
         System.out.println(body);
 
         given()

@@ -24,7 +24,7 @@ public class Configuration {
     public static String getConfigurationValue(String key) {
 
         return ((System.getProperty(key) == null) ? properties.getProperty(key) : System.getProperty(key));
-    }
+}
 
     public Configuration(){
 

@@ -8,6 +8,7 @@ import static BaseApi.Second.seccccond;
 import static io.restassured.RestAssured.given;
 
 public class Ferst {
+
     @Step("Шаг 1 проверка морти")
     public static void ferrrst(){
         seccccond();

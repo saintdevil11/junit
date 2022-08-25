@@ -20,3 +20,6 @@ mvn allure:serve
 #запуски без указанных переменных в переменных средах винды
 set path=%path%;C:\apache-maven-3.6.3\bin
 set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_241
+
+#парметризированный запуск на CI
+mvn clean test -Dgroups=1api -Dmain.GitHub=${url}

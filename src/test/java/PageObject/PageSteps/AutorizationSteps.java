@@ -16,11 +16,16 @@ public class AutorizationSteps {
         open(url);
     }
 
+
+
     @Step("Авторизуемся в системе пользователем {log}")
     public static void autorisation(String log, String pass){
         Allure.getLifecycle().updateStep(stepResult -> stepResult.getParameters().remove(1));
         $x(buttonSignInGit).click();
         $x(buttonLoginGit).sendKeys(log);
+        /**
+         * TODO: поле не работает. заведен баг SD12343647
+         * */
         setPassword(pass);
         $x(buttonButtonSignGit).click();
     }
